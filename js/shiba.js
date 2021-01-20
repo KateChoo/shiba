@@ -66,5 +66,5 @@ let scene, camera, renderer, cube, geometry, shiba;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }; 
-   
-    createTexture(geometry, 0x44aa88, 0)
+    setTimeout(createTexture(geometry, 0x44aa88, 0), 5000)
+    
