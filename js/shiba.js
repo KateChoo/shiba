@@ -1,9 +1,8 @@
 let scene, camera, renderer, cube, geometry, shiba;
-    const objects = [];
+    
     init();
     Go();
     window.addEventListener('resize', onWindowResize)
-
     function init() {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -20,12 +19,11 @@ let scene, camera, renderer, cube, geometry, shiba;
         shiba = gltf.scene.children[0];
         //animate();
       });
-      createTexture(geometry, 0x44aa88, 0)
     };
     
     
     function createTexture(geometry, color, x) {   
-      geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+      geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05);
       const cubeMaterials = [
         new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load('https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_UX182_CR0,0,182,268_AL_.jpg'), side: THREE.DoubleSide }),
         new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_UX182_CR0,0,182,268_AL_.jpg'), side: THREE.DoubleSide }),
@@ -68,3 +66,5 @@ let scene, camera, renderer, cube, geometry, shiba;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }; 
+   
+    createTexture(geometry, 0x44aa88, 0)
