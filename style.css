@@ -21,4 +21,18 @@ p{
     transform: translateX(-50%);
     color: rgb(0, 255, 0);
 }
+.loading{
+    overflow: hidden; 
+    animation: amsterdam 8s steps(25);
+    white-space: nowrap; 
+}
+
+@keyframes amsterdam {
+    0% {
+    width: 0ch;
+    }
+    100% {
+    width: 30ch;
+    }
+}
 
