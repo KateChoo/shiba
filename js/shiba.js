@@ -24,7 +24,7 @@ let scene, camera, renderer, cube, geometry, shiba;
     };
     
     
-    function createTexture(geometry, color, x) {   //geometry, color, x, y
+    function createTexture(geometry, color, x) {   
       geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
       const cubeMaterials = [
         new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load('https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_UX182_CR0,0,182,268_AL_.jpg'), side: THREE.DoubleSide }),
