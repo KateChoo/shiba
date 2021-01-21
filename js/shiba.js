@@ -1,8 +1,5 @@
 let scene, camera, renderer, cube, geometry, shiba;
     
-    init();
-    Go();
-    window.addEventListener('resize', onWindowResize)
     function init() {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -21,7 +18,30 @@ let scene, camera, renderer, cube, geometry, shiba;
       });
     };
     
-    
+    function ambientLight() {
+      const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.8)
+      scene.add(ambientLight)
+    }
+
+    // function animate() {
+    //   //cube.rotation.x += 0.01;
+    //   //cube.rotation.y += 0.005;
+    // };
+
+    // function render() {
+    //   renderer.render(scene, camera);
+    // }
+    function Go() {
+      requestAnimationFrame(Go);
+      //animate();
+      //render();
+      renderer.render(scene, camera);
+    };
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }; 
     function createTexture(geometry, color, x) {   
       geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05);
       const cubeMaterials = [
@@ -40,31 +60,8 @@ let scene, camera, renderer, cube, geometry, shiba;
 
       ambientLight()
     }
-    
-
-    function ambientLight() {
-      const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.8)
-      scene.add(ambientLight)
-    }
-
-    //game logic
-    function animate() {
-      //cube.rotation.x += 0.01;
-      //cube.rotation.y += 0.005;
-    };
-    //draw scene
-    function render() {
-      renderer.render(scene, camera);
-    }
-    function Go() {
-      requestAnimationFrame(Go);
-      animate();
-      render();
-    };
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    }; 
+    init();
+    Go();
+    window.addEventListener('resize', onWindowResize)
     setTimeout(createTexture(geometry, 0x44aa88, 0), 30000)
     
