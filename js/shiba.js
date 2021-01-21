@@ -63,5 +63,5 @@ let scene, camera, renderer, cube, geometry, shiba;
     init();
     Go();
     window.addEventListener('resize', onWindowResize)
-    setTimeout(createTexture(geometry, 0x44aa88, 0), 30000)
+    setTimeout(function(){createTexture(geometry, 0x44aa88, 0)}, 10000)
     
