@@ -1,50 +1,72 @@
-
-body { margin: 0;}
-canvas { width: 100%; height: 100%;}
-a{
-    text-decoration: none;
+body {
+  margin: 0;
 }
-.loading a{
-    color: rgb(0, 255, 0);
+canvas {
+  width: 100%;
+  height: 100%;
 }
-a:hover{
-    color: rgb(221, 15, 15);
+a {
+  text-decoration: none;
 }
-h1{
-    position:fixed; 
-    top:3%; 
-    left:3%; 
-    color:rgb(221, 15, 15);
+.loading a {
+  color: rgb(0, 255, 0);
 }
-.loading{
-    position:fixed; 
-    bottom:2%; 
-    left:50%; 
-    transform: translateX(-50%);
-    color: rgb(0, 255, 0);
+a:hover {
+  color: rgb(221, 15, 15);
 }
-.ru{
-    position:fixed; 
-    top: 0 ; 
-    left:50%; 
-    transform: translateX(-50%);
-    color: rgb(214, 228, 214);
+h1 {
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  color: rgb(221, 15, 15);
 }
-p a{
-    color: rgb(214, 228, 214);
+.loading {
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 255, 0);
 }
-.loading{
-    overflow: hidden; 
-    animation: amsterdam 8s steps(25);
-    white-space: nowrap; 
+.ru {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(214, 228, 214);
+}
+p a {
+  color: rgb(214, 228, 214);
+}
+.loading {
+  overflow: hidden;
+  animation: amsterdam 8s steps(40);
+  white-space: nowrap;
 }
 
 @keyframes amsterdam {
-    0% {
+  0% {
     width: 0ch;
-    }
-    100% {
-    width: 30ch;
-    }
+  }
+  100% {
+    width: 40ch;
+  }
 }
 
+/* .progress_bar{
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #000;
+}
+.bar_fill{
+    height: 100%;
+    background: rgb(0, 255, 0);
+    transition: width .5s;
+}
+.bar_value{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+} */
