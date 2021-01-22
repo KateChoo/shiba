@@ -64,10 +64,12 @@ let scene, camera, renderer, cube, geometry, shiba;
     //   createTexture(geometry, 0x44aa88, 0)
     // }
     //init();
-    Go();
+    
     window.addEventListener('resize', onWindowResize)
     //window.addEventListener('load', pageFullyLoaded, false)
     //setTimeout(function(){createTexture(geometry, 0x44aa88, 0)}, 3000)
     Promise.all([init()])
+          .then(function(){Go()})
           .then(function(){createTexture(geometry, 0x44aa88, 0)})
+          
     
